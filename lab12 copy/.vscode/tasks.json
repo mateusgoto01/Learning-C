@@ -1,0 +1,32 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build", // task name, corresponding to the preLaunchTask of launch.json
+                         "command": "gcc", // the compiler to use
+            "args": [
+                                 "${file}", //Which file is selected on the view of the file, select which file
+                "${fileDirname}/add/add.c",
+                "${fileDirname}/sub/sub.c",
+                "${fileDirname}/mul/mul.c",
+                "${fileDirname}/dev/dev.c",  
+                                 "-o", 
+                                 "${fileDirname}/${fileBasenameNoExtension}.exe",
+                                 "-g", // generate and debug related information
+                                 "-Wall", // turn on extra warnings
+                         ], // compile command parameters
+                         "type": "shell", // can be shell or process, the former is equivalent to first open the shell and then enter the command, the latter is to run the command directly
+            "group": {
+                "kind": "build",
+                                 "isDefault": true // set to false to do a tasks.json to configure multiple compile instructions, you need to modify this file yourself
+            },
+            "presentation": {
+                "echo": true,
+                                 "reveal": "always", // The strategy for displaying compiled information in "terminal" can be always, silent, never. See the VSC documentation for details.
+                                 "focus": false, // set to true to focus on the terminal when executing the task
+                                 "panel": "shared" // compile information for different files to share a terminal panel
+            },
+        }
+    ]
+}
