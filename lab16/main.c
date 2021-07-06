@@ -28,17 +28,8 @@ int main(void){
                 }
             }
         }
-    //graph_print(ver, p);
-
-    scanf(" %[^\n]s", cmd);
-        if(strcmp(cmd, "Origem:")== 0){
-            scanf("%d", &find);
-            printf("Origem da busca: %d\n", find);
-            printf("Vertices alcancados e distancias:\n");
-            graph_BFS(p, ver, find);
-            graph_free(p);
-            return 0;
-        }
+    graph_print(ver, p);
+    
     return 0;
 }
 
