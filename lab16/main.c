@@ -28,8 +28,11 @@ int main(void){
                 }
             }
         }
+        
     graph_print(ver, p);
-    
+    graph_DTS(p, ver);
+    graph_print_DFS(ver, p);
+
     return 0;
 }
 
