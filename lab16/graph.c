@@ -10,8 +10,10 @@ table* graph_creat(int size){
     table->head = calloc(size, sizeof(node*));
 
     table->mark = malloc(size * sizeof(int));
-    table->dist = malloc(size * sizeof(int));
-
+    table->color = malloc(size * sizeof(int));
+    table->timestamp = malloc(size * sizeof(int));
+    table->timestamp_final = malloc(size * sizeof(int));
+    
     return table;
 }
 
@@ -49,7 +51,9 @@ void graph_print(int ver, table* p){
 
 void graph_free(table* p){
     free(p->mark);
-    free(p->dist);
+    free(p->color);
+    free(p->timestamp);
+    free(p->timestamp_final);
     free(p->head);
     free(p);
 }

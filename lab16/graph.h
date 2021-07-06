@@ -14,7 +14,10 @@ typedef struct node node;
 
 struct table{
     int* mark; // guar se o vertice foi marcado ou não
-    int* dist; // guarda a distancia do vertice de origem
+    int* color; // 1 = white 2 = gray 3 = black
+    int* timestamp; // guarda tempo de descoberta
+    int* timestamp_final; // guarda tempo de finalização
+
     node** head;
 };
 
@@ -32,4 +35,4 @@ void graph_print(int ver, table* p);
 void graph_free(table* p);
 
 //Parte do codigo para DFS
-
+void graph_DTS(table* p);
